@@ -6,7 +6,7 @@ const {
 
 } = inject();
 
-Scenario('test something', ({ I }) => {
+Scenario('test something', async ({ I }) => {
     const randomName = 'caudalie';
     const numberOfPagesToCheck = 5;
 
@@ -16,11 +16,11 @@ Scenario('test something', ({ I }) => {
     I.pressKey('Enter');
     // TODO Check for for waitPageLoads
     I.wait(3);
-   
 
     for(let currentPage = 1; currentPage <= numberOfPagesToCheck; currentPage++) {
     I.seeElement(googleItems.searchResult);
-    I.grabValueFromAll(googleItems.elementResult);
+    let links = await I.grabTextFromAll(googleItems.elementResult);
+    console.log(links);
     I.click(googleItems.nextButton);
     I.wait(3);
     }

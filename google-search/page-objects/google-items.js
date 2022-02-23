@@ -4,7 +4,7 @@ module.exports= {
  acceptCookieButton: {xpath: '//*[@id="L2AGLb"]/div'},
  field: 'Buscar',
  searchResult: {xpath: '//*[@id="search"]/div'},
- elementResult: {class: 'LC20lb MBeuO DKV0Md'},
+ elementResult: {xpath: '//a/h3'},
  nextButton: {xpath: '//*[@id="pnnext"]/span[2]'},
  
  acceptCookie() {
